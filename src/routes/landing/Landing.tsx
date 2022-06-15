@@ -7,7 +7,7 @@ import css from "./styles.module.css";
 import Label from "../../shared/label/Label";
 import { ArrowRightIcon } from "../../shared/icons";
 import useMediaQuery from "../../hooks/useMediaQuery";
-import { MediaQueries } from "../../helpers/styles";
+import { useGlobalContext } from "../../hooks/useGlobalContext";
 
 const MAP_LABEL_PADDING = {
   mobile: css.labelMobile,
@@ -67,11 +67,9 @@ const getSuggestionStyle = (
 };
 
 const Landing = (_props: LandingProps) => {
-  const minSize = useMediaQuery(MediaQueries.NONE);
-  const mobile = useMediaQuery(MediaQueries.XS);
-  const isTablet = useMediaQuery(MediaQueries.SM);
-  const isLaptop = useMediaQuery(MediaQueries.MD);
-  const isDesktop = useMediaQuery(MediaQueries.LG);
+  const { minSize, betweenMinAndMobile, isTablet, isLaptop, isDesktop } =
+    useMediaQuery();
+  const { isMenuOpen } = useGlobalContext();
   const labelClass = getLabelPadding(minSize, isTablet, isLaptop, isDesktop);
   const descriptionClass = getDescriptionStyle(
     minSize,
@@ -92,6 +90,9 @@ const Landing = (_props: LandingProps) => {
           <Label
             style={{
               fontFamily: "Inter Medium, sans-serif",
+              ...(minSize && !betweenMinAndMobile
+                ? { fontSize: "0.6rem" }
+                : undefined),
             }}
             color="dark"
             variant="text-sm"
@@ -99,8 +100,15 @@ const Landing = (_props: LandingProps) => {
             <Label type="children" variant="text-xs">
               {"WE'RE HIRING"}
             </Label>
-            <span style={{ paddingLeft: "10px" }}>Visit our careers page</span>
-            <ArrowRightIcon width={mobile ? 25 : 20} height={10} />
+            <span
+              style={{
+                paddingLeft: "10px",
+                ...(minSize && !betweenMinAndMobile && { fontSize: "0.6rem" }),
+              }}
+            >
+              Visit our careers page
+            </span>
+            <ArrowRightIcon width={betweenMinAndMobile ? 25 : 20} height={10} />
           </Label>
         </div>
         <div>
@@ -119,7 +127,7 @@ const Landing = (_props: LandingProps) => {
                 ? "heading"
                 : "text-4xl"
             }
-            color="#FFFFFF"
+            color="var(--white)"
           >
             A better way to
           </Heading>
@@ -140,13 +148,13 @@ const Landing = (_props: LandingProps) => {
                 ? "heading"
                 : "text-4xl"
             }
-            color="#818CF8"
+            color="var(--indigo-400)"
           >
             ship web apps
           </Heading>
         </div>
         <div className={descriptionClass}>
-          <Heading variant="text-base" color="#D1D5DB">
+          <Heading variant="text-base" color="var(--gray-300)">
             Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
             Lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
             fugiat.
@@ -161,6 +169,7 @@ const Landing = (_props: LandingProps) => {
         >
           <div className={isTablet ? css.input : undefined}>
             <Input
+              disabled={isMenuOpen}
               size={isLaptop ? "lg" : isTablet ? "md" : "xl"}
               placeholder="Enter your email"
               value="Some random text"
@@ -168,6 +177,7 @@ const Landing = (_props: LandingProps) => {
           </div>
           <div className={isTablet ? undefined : css.buttonSpacingMobile}>
             <Button
+              disabled={isMenuOpen}
               title="Start free trial"
               size={isTablet ? "md" : "xl"}
               variant="filled"
@@ -176,13 +186,13 @@ const Landing = (_props: LandingProps) => {
           </div>
         </form>
         <div className={suggestionClass}>
-          <Heading variant="text-sm" color="#D1D5DB">
+          <Heading variant="text-sm" color="var(--gray-300)">
             Start your free 14-day trial, no credit card necessary. By providing
             your email, you agree to our{" "}
             <Heading
               style={{ fontWeight: 400 }}
               variant="text-sm"
-              color="#FFFFFF"
+              color="var(--white)"
             >
               terms or service.
             </Heading>

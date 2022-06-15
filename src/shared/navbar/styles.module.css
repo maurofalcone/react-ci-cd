@@ -10,6 +10,13 @@
 .logoMobile,
 .logoContainerMobile {
     display: flex;
+    align-items: center;
+}
+
+.logoTablet,
+.logoLaptop,
+.logoDesktop {
+    padding-right: 25px;
 }
 
 .logoContainerMobile {

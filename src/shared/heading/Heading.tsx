@@ -11,7 +11,7 @@ const HEADING_VARIANT_MAP = {
 };
 
 export const Heading = ({
-  color = "#FFFFFF",
+  color = "var(--white)",
   variant,
   children,
   style,

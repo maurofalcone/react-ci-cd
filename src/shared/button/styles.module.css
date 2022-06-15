@@ -8,6 +8,9 @@ button {
     line-height: 24px;
     padding: 12px 16px;
     height: 48px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .defaultFilled {
@@ -108,6 +111,9 @@ button {
 .icon {
     padding: 8px;
     border-radius: 6px;
+    border-style: none;
+    width: 40px;
+    height: 40px;
 }
 
 .iconDark {
@@ -125,4 +131,25 @@ button {
 
 .iconDark svg {
     fill: var(--gray-400);
+}
+
+.iconLight {
+    background-color: transparent;
+    border-style: none;
+}
+
+.iconLight:hover {
+    background-color: var(--gray-100);
+}
+
+.iconLight:focus {
+    box-shadow: inset 0px 0px 0px 2px var(--indigo-500);
+}
+
+.iconLight svg {
+    fill: var(--gray-400);
+}
+
+.iconLight:hover svg {
+    fill: var(--gray-500);
 }

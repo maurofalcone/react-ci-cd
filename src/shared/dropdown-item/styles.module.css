@@ -1,0 +1,11 @@
+.container {
+    width: 100%;
+    color: var(--gray-700);
+    padding: 8px 12px;
+    height: 40px;
+}
+
+.container:hover {
+    color: var(--gray-900);
+    background-color: var(--gray-50);
+}

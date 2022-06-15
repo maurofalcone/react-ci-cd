@@ -1,4 +1,4 @@
-interface NavbarOption {
+export interface NavbarOption {
   title: string;
   onClick: () => void;
 }

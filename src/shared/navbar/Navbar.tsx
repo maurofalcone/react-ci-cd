@@ -1,9 +1,11 @@
 import { Button } from "../button";
 import { NavbarProps } from "./types";
-import { LogoIcon, MenuIcon } from "../icons";
+import { LogoIcon } from "../icons";
 import css from "./styles.module.css";
 import useMediaQuery from "../../hooks/useMediaQuery";
-import { MediaQueries } from "../../helpers/styles";
+import { DropdownMenu } from "../dropdown-menu";
+import { useState } from "react";
+import { useGlobalContext } from "../../hooks/useGlobalContext";
 
 const MAP_LOGO_SIZES = {
   mobile: css.logoMobile,
@@ -25,11 +27,11 @@ const getLabelPadding = (
 };
 
 export const Navbar = ({ options }: NavbarProps) => {
-  const minSize = useMediaQuery(MediaQueries.NONE);
-  const isTablet = useMediaQuery(MediaQueries.SM);
-  const isLaptop = useMediaQuery(MediaQueries.MD);
-  const isDesktop = useMediaQuery(MediaQueries.LG);
+  const { minSize, isTablet, isLaptop, isDesktop } = useMediaQuery();
+  const { isMenuOpen, setMenuOpen } = useGlobalContext();
   const logoClass = getLabelPadding(minSize, isTablet, isLaptop, isDesktop);
+
+  const toggleMenu = () => setMenuOpen(!isMenuOpen);
 
   return (
     <div className={isTablet ? css.container : css.logoContainerMobile}>
@@ -64,7 +66,11 @@ export const Navbar = ({ options }: NavbarProps) => {
         </>
       ) : (
         <div className={css.menuContainer}>
-          <Button color="dark" icon={<MenuIcon width="16" height="12" />} />
+          <DropdownMenu
+            isOpen={isMenuOpen}
+            onClick={toggleMenu}
+            options={options}
+          />
         </div>
       )}
     </div>

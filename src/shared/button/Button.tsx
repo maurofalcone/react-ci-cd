@@ -39,7 +39,9 @@ export const Button = ({
 }: ButtonProps) => {
   const focusStyle = focusable ? "active" : "inactive";
   return icon ? (
-    <div className={`${css.icon} ${MAP_ICON_VARIANT[color]}`}>{icon}</div>
+    <button className={`${css.icon} ${MAP_ICON_VARIANT[color]}`} {...rest}>
+      {icon}
+    </button>
   ) : (
     <button
       {...rest}

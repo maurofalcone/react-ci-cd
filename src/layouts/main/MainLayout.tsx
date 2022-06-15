@@ -2,7 +2,6 @@ import css from "./styles.module.css";
 import BackgroundImage from "../../assets/images/Background.png";
 import { Navbar } from "../../shared/navbar";
 import useMediaQuery from "../../hooks/useMediaQuery";
-import { MediaQueries } from "../../helpers/styles";
 
 const MAP_LAYOUT_PADDING = {
   tablet: css.paddingTablet,
@@ -47,22 +46,9 @@ const MainLayout = ({
 }: {
   children: JSX.Element | JSX.Element[];
 }) => {
-  const isMobile = useMediaQuery(MediaQueries.NONE);
-  const isTablet = useMediaQuery(MediaQueries.SM);
-  const isLaptop = useMediaQuery(MediaQueries.MD);
-  const isDesktop = useMediaQuery(MediaQueries.LG);
-  const paddingClass = getMappedPadding(
-    isMobile,
-    isTablet,
-    isLaptop,
-    isDesktop
-  );
-  const wrapperClass = getMappedWrapper(
-    isMobile,
-    isTablet,
-    isLaptop,
-    isDesktop
-  );
+  const { minSize, isTablet, isLaptop, isDesktop } = useMediaQuery();
+  const paddingClass = getMappedPadding(minSize, isTablet, isLaptop, isDesktop);
+  const wrapperClass = getMappedWrapper(minSize, isTablet, isLaptop, isDesktop);
 
   return (
     <div className={`${css.container} ${paddingClass}`}>
