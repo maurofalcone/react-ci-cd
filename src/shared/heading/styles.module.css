@@ -1,0 +1,32 @@
+.xxxxl {
+    font-family: 'Inter-ExtraBold', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 40px;
+    letter-spacing: -0.025em;
+}
+
+.xs {
+    font-family: 'Inter-Medium', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.base,
+.sm {
+    font-family: 'Inter-Regular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.base {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.sm {
+    font-size: 14px;
+    line-height: 20px;
+}

@@ -1,0 +1,24 @@
+.wrapper {
+    padding: 6px 4px;
+    border-radius: 14px;
+}
+
+.children {
+    padding: 2px 12px;
+    border-radius: 10px;
+}
+
+.default {
+    background: var(--indigo-500);
+    color: var(--white);
+}
+
+.dark {
+    color: var(--white);
+    background: var(--black);
+}
+
+.light {
+    color: var(--indigo-500);
+    background: var(--black);
+}

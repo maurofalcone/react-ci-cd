@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    flex: 1;
+}
+
+.mobileContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.smallLogo {
+    width: 33px;
+    height: 30px;
+}
+
+.optionsContainer {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.actionsContainer {
+    display: flex;
+    width: 212px;
+    justify-content: flex-end;
+}

@@ -17,28 +17,37 @@ const MAP_BUTTON_COMPOSED_VARIANT = {
   "default-text": css.defaultText,
 };
 
+const MAP_ICON_VARIANT = {
+  light: css.iconLight,
+  dark: css.iconDark,
+  default: css.iconDark,
+};
+
 const MAP_FOCUSABLE_VARIANT = {
   active: css.focusActive,
   inactive: css.focusInactive,
 };
 
-const Button = ({
+export const Button = ({
   title,
   variant = "filled",
-  size = "xl",
+  size = "auto",
   color = "default",
   icon,
   focusable = true,
+  ...rest
 }: ButtonProps) => {
   const focusStyle = focusable ? "active" : "inactive";
-  return (
+  return icon ? (
+    <div className={`${css.icon} ${MAP_ICON_VARIANT[color]}`}>{icon}</div>
+  ) : (
     <button
+      {...rest}
       className={`${MAP_BUTTON_SIZE[size]} ${
         MAP_BUTTON_COMPOSED_VARIANT[`${color}-${variant}`]
       } ${MAP_FOCUSABLE_VARIANT[focusStyle]}`}
     >
       {<span>{title}</span>}
-      {icon ? icon : null}
     </button>
   );
 };

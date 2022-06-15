@@ -2,8 +2,11 @@ button {
     border-radius: 6px;
     outline: none;
     font-family: 'Inter-Medium', sans-serif;
-    padding: 12px 16px;
+    font-style: normal;
+    font-weight: 500;
     font-size: 16px;
+    line-height: 24px;
+    padding: 12px 16px;
     height: 48px;
 }
 
@@ -19,6 +22,16 @@ button {
     border: 2px solid var(--indigo-600);
 }
 
+.defaultText,
+.defaultText:focus {
+    color: var(--indigo-600);
+}
+
+.defaultText:hover {
+    color: var(--indigo-500);
+}
+
+
 .lightFilled {
     box-shadow: 0px 1px 2px 0px #0000000F;
     box-shadow: 0px 1px 3px 0px #0000001A;
@@ -31,6 +44,20 @@ button {
     color: var(--indigo-600);
 }
 
+.lightText {
+    background: none;
+    border: none;
+}
+
+.lightText,
+.lightText:focus {
+    color: var(--white);
+}
+
+.lightText:hover {
+    color: var(--gray-300);
+}
+
 .darkFilled,
 .darkFilled:focus {
     background-color: var(--gray-600);
@@ -41,6 +68,15 @@ button {
 .darkFilled:hover {
     background-color: var(--gray-700);
     border: 2px solid var(--gray-700);
+}
+
+.darkText,
+.darkText:focus {
+    color: var(--gray-500);
+}
+
+.darkText:hover {
+    color: var(--gray-900);
 }
 
 .focusActive:focus {
@@ -67,4 +103,26 @@ button {
 
 .medium {
     width: 139px;
+}
+
+.icon {
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.iconDark {
+    box-shadow: none;
+    background-color: var(--gray-900);
+}
+
+.iconDark:hover {
+    background-color: var(--gray-800);
+}
+
+.iconDark:focus {
+    box-shadow: inset 0px 0px 0px 2px var(--white);
+}
+
+.iconDark svg {
+    fill: var(--gray-400);
 }
