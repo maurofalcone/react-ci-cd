@@ -3,7 +3,7 @@ export enum MediaQueries {
   XXS = "(min-width: 360px)",
   XS = "(min-width: 415px)",
   SM = "(min-width: 600px",
-  MD = "(min-width: 900px)",
-  LG = "(min-width: 1200px)",
+  MD = "(min-width: 1080px)",
+  LG = "(min-width: 1280px)",
   XL = "(min-width: 1536px)",
 }

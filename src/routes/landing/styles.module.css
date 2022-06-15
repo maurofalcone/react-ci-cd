@@ -1,16 +1,77 @@
 .form {
-    padding-top: 40px;
+    display: flex;
 }
 
-.label {
-    padding-top: 45px;
+.mobileForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    padding-right: 12px;
+}
+
+.labelMobile {
     padding-bottom: 16px;
 }
 
-.verticalSpacing {
+.labelTablet,
+.labelLaptop,
+.labelDesktop {
+    padding-bottom: 24px;
+}
+
+.labelMobile,
+.labelTablet {
+    padding-top: 45px;
+}
+
+.titleMobile {
     padding-bottom: 12px;
 }
 
-.suggestion {
-    padding-right: 20px;
+.title {
+    padding-bottom: 20px;
+}
+
+.descriptionMobile {
+    padding-bottom: 40px;
+    padding-right: 50px;
+}
+
+.descriptionTablet {
+    width: 369px;
+    padding-right: 50px;
+    padding-bottom: 48px;
+}
+
+.descriptionLaptop {
+    padding-right: 65px;
+    padding-bottom: 48px;
+}
+
+.descriptionDesktop {
+    padding-right: 50px;
+    padding-bottom: 48px;
+}
+
+.suggestionDesktop,
+.suggestionLaptop {
+    padding-right: 32px;
+    padding-top: 16px;
+}
+
+.suggestionTablet {
+    padding-right: 50px;
+    padding-top: 16px;
+}
+
+.suggestionMobile {
+    padding-right: 35px;
+    max-width: 344px;
+    padding-top: 12px;
+}
+
+.buttonSpacingMobile {
+    padding-top: 12px;
 }

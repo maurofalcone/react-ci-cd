@@ -11,10 +11,11 @@ const MAP_SIZE = {
 
 const Input = ({ size = "auto", ...rest }: InputProps) => {
   const [value, setValue] = useState("");
+
   return (
     <input
-      className={MAP_SIZE[size]}
       {...rest}
+      className={MAP_SIZE[size]}
       value={value}
       onChange={(e) => setValue(e.target.value)}
     />

@@ -1,17 +1,19 @@
 .container {
     display: flex;
     flex: 1;
-}
-
-.mobileContainer {
-    display: flex;
-    justify-content: space-between;
-}
-
-.logoContainer {
-    display: flex;
-    justify-content: center;
     align-items: center;
+}
+
+.logoDesktop,
+.logoLaptop,
+.logoTablet,
+.logoMobile,
+.logoContainerMobile {
+    display: flex;
+}
+
+.logoContainerMobile {
+    justify-content: space-between;
 }
 
 .smallLogo {
@@ -27,6 +29,6 @@
 
 .actionsContainer {
     display: flex;
-    width: 212px;
+    width: 215px;
     justify-content: flex-end;
 }

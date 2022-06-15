@@ -2,7 +2,6 @@ input {
     padding: 12px 16px;
     color: var(--gray-600);
     height: 48px;
-    width: 326px;
     border-radius: 6px;
     border: 2px solid var(--white);
     font-family: 'Inter-Regular', sans-serif;
@@ -16,5 +15,17 @@ input:focus {
 }
 
 .auto {
+    width: auto;
+}
+
+.xl {
     width: 100%;
+}
+
+.lg {
+    width: 425px;
+}
+
+.md {
+    width: 358px;
 }

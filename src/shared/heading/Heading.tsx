@@ -2,10 +2,12 @@ import { HeadingProps } from "./types";
 import css from "./styles.module.css";
 
 const HEADING_VARIANT_MAP = {
+  "text-6xl": css.bigText,
   "text-4xl": css.xxxxl,
   "text-base": css.base,
   "text-xs": css.xs,
   "text-sm": css.sm,
+  heading: css.heading,
 };
 
 export const Heading = ({
