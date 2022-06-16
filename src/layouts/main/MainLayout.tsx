@@ -25,27 +25,29 @@ const MainLayout = ({
           ]}
         />
       </div>
-      <div className={wrapperClass}>
-        <div className={isDesktop ? css.childrenWrapper : wrapperClass}>
-          {children}
-        </div>
-        <div
-          className={
-            isTablet && !isDesktop
-              ? css.tabletBackground
-              : isDesktop
-              ? css.background
-              : css.mobileBackground
-          }
-        >
-          <img
-            style={{
-              width: isTablet ? "625px" : "100%",
-              ...(isTablet && { height: "625px" }),
-            }}
-            src={BackgroundImage}
-            alt="background"
-          />
+      <div>
+        <div className={wrapperClass}>
+          <div className={isDesktop ? css.childrenWrapper : wrapperClass}>
+            {children}
+          </div>
+          <div
+            className={
+              isTablet && !isDesktop
+                ? css.tabletBackground
+                : isDesktop
+                ? css.background
+                : css.mobileBackground
+            }
+          >
+            <img
+              style={{
+                width: isTablet ? "625px" : "100%",
+                ...(isTablet && { height: "625px" }),
+              }}
+              src={BackgroundImage}
+              alt="background"
+            />
+          </div>
         </div>
       </div>
     </div>
