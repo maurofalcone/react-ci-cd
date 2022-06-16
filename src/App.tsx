@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./App.css";
 import { MyGlobalContext } from "./hooks/useGlobalContext";
 import Landing from "./routes/landing";
 

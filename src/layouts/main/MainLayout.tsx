@@ -3,6 +3,7 @@ import BackgroundImage from "../../assets/images/Background.png";
 import { Navbar } from "../../shared/navbar";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import { getMappedPadding, getMappedWrapper } from "./style-helpers";
+import { OPTIONS_MOCK } from "../../helpers/mocks";
 
 const MainLayout = ({
   children,
@@ -16,14 +17,7 @@ const MainLayout = ({
   return (
     <div className={`${css.container} ${paddingClass}`}>
       <div>
-        <Navbar
-          options={[
-            { title: "Product", onClick: () => console.log("1") },
-            { title: "Features", onClick: () => console.log("2") },
-            { title: "Marketplace", onClick: () => console.log("3") },
-            { title: "Company", onClick: () => console.log("4") },
-          ]}
-        />
+        <Navbar options={OPTIONS_MOCK} />
       </div>
       <div>
         <div className={wrapperClass}>

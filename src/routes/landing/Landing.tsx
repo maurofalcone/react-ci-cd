@@ -46,13 +46,12 @@ const Landing = () => {
             variant="text-sm"
           >
             <Label type="children" variant="text-xs">
-              {"WE'RE HIRING"}
+              WE'RE HIRING
             </Label>
             <span
               style={{
                 paddingLeft: "10px",
                 paddingRight: "8px",
-                // fontSize: "14px",
                 ...(minSize && !betweenMinAndMobile
                   ? { fontSize: "10px" }
                   : { fontSize: "14px" }),
@@ -116,7 +115,6 @@ const Landing = () => {
           className={isTablet ? css.form : css.mobileForm}
           onSubmit={(e) => {
             e.preventDefault();
-            console.log("HERE", e);
           }}
         >
           <div className={isTablet ? css.input : undefined}>

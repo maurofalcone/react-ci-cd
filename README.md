@@ -19,3 +19,5 @@ You will also see any lint errors in the console.
 
 - Add unit tests using Jest.
 - Add a CSS library to scale responsive desing such as StyledComponents, Mui, among others.
+- Add navigation.
+- Add Lib for handling Forms.
