@@ -54,7 +54,8 @@
     height: 100%;
 }
 
-.background, .tabletBackground {
+.background,
+.tabletBackground {
     height: 100%;
 }
 
@@ -77,6 +78,7 @@
 }
 
 .childrenWrapper {
-    padding-top: 194px;
+    display: flex;
+    align-items: center;
     padding-right: 5px;
 }
