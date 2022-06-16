@@ -4,27 +4,8 @@ import { LogoIcon } from "../icons";
 import css from "./styles.module.css";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import { DropdownMenu } from "../dropdown-menu";
-import { useState } from "react";
 import { useGlobalContext } from "../../hooks/useGlobalContext";
-
-const MAP_LOGO_SIZES = {
-  mobile: css.logoMobile,
-  tablet: css.logoTablet,
-  laptop: css.logoLaptop,
-  desktop: css.logoDesktop,
-};
-
-const getLabelPadding = (
-  isMobile: boolean,
-  isTablet: boolean,
-  isLaptop: boolean,
-  isDesktop: boolean
-) => {
-  if (isMobile && !isTablet) return MAP_LOGO_SIZES["mobile"];
-  if (isTablet && !isLaptop) return MAP_LOGO_SIZES["tablet"];
-  if (isLaptop && !isDesktop) return MAP_LOGO_SIZES["laptop"];
-  if (isDesktop) return MAP_LOGO_SIZES["desktop"];
-};
+import { getLabelPadding } from "./style-helpers";
 
 export const Navbar = ({ options }: NavbarProps) => {
   const { minSize, isTablet, isLaptop, isDesktop } = useMediaQuery();

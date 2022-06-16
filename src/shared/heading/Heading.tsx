@@ -1,14 +1,5 @@
+import { MAP_HEADING_VARIANT } from "./style-helpers";
 import { HeadingProps } from "./types";
-import css from "./styles.module.css";
-
-const HEADING_VARIANT_MAP = {
-  "text-6xl": css.bigText,
-  "text-4xl": css.xxxxl,
-  "text-base": css.base,
-  "text-xs": css.xs,
-  "text-sm": css.sm,
-  heading: css.heading,
-};
 
 export const Heading = ({
   color = "var(--white)",
@@ -19,7 +10,7 @@ export const Heading = ({
 }: HeadingProps) => (
   <span
     style={{ color, ...style }}
-    className={HEADING_VARIANT_MAP[variant]}
+    className={MAP_HEADING_VARIANT[variant]}
     {...rest}
   >
     {children}

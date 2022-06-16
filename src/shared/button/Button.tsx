@@ -1,32 +1,11 @@
 import { ButtonProps } from "./types";
 import css from "./styles.module.css";
-
-const MAP_BUTTON_SIZE = {
-  xl: css.extraLarge,
-  lg: css.large,
-  md: css.medium,
-  auto: css.auto,
-};
-
-const MAP_BUTTON_COMPOSED_VARIANT = {
-  "dark-filled": css.darkFilled,
-  "light-filled": css.lightFilled,
-  "default-filled": css.defaultFilled,
-  "dark-text": css.darkText,
-  "light-text": css.lightText,
-  "default-text": css.defaultText,
-};
-
-const MAP_ICON_VARIANT = {
-  light: css.iconLight,
-  dark: css.iconDark,
-  default: css.iconDark,
-};
-
-const MAP_FOCUSABLE_VARIANT = {
-  active: css.focusActive,
-  inactive: css.focusInactive,
-};
+import {
+  MAP_BUTTON_COMPOSED_VARIANT,
+  MAP_BUTTON_SIZE,
+  MAP_FOCUSABLE_VARIANT,
+  MAP_ICON_VARIANT,
+} from "./style-helpers";
 
 export const Button = ({
   title,

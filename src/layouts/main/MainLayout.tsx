@@ -2,44 +2,7 @@ import css from "./styles.module.css";
 import BackgroundImage from "../../assets/images/Background.png";
 import { Navbar } from "../../shared/navbar";
 import useMediaQuery from "../../hooks/useMediaQuery";
-
-const MAP_LAYOUT_PADDING = {
-  tablet: css.paddingTablet,
-  desktop: css.paddingDesktop,
-  mobile: css.paddingMobile,
-  laptop: css.paddingLaptop,
-};
-
-const MAP_LAYOUT_WRAPPER = {
-  tablet: css.tabletWrapper,
-  desktop: css.desktopWrapper,
-  mobile: css.mobileWrapper,
-  laptop: css.laptopWrapper,
-};
-
-const getMappedPadding = (
-  isMobile: boolean,
-  isTablet: boolean,
-  isLaptop: boolean,
-  isDesktop: boolean
-) => {
-  if (isMobile && !isTablet) return MAP_LAYOUT_PADDING["mobile"];
-  if (isTablet && !isLaptop) return MAP_LAYOUT_PADDING["tablet"];
-  if (isLaptop && !isDesktop) return MAP_LAYOUT_PADDING["laptop"];
-  return MAP_LAYOUT_PADDING["desktop"];
-};
-
-const getMappedWrapper = (
-  isMobile: boolean,
-  isTablet: boolean,
-  isLaptop: boolean,
-  isDesktop: boolean
-) => {
-  if (isMobile && !isTablet) return MAP_LAYOUT_WRAPPER["mobile"];
-  if (isTablet && !isLaptop) return MAP_LAYOUT_WRAPPER["tablet"];
-  if (isLaptop && !isDesktop) return MAP_LAYOUT_WRAPPER["laptop"];
-  if (isDesktop) return MAP_LAYOUT_WRAPPER["desktop"];
-};
+import { getMappedPadding, getMappedWrapper } from "./style-helpers";
 
 const MainLayout = ({
   children,

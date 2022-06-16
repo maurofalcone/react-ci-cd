@@ -1,17 +1,6 @@
 import { LabelProps } from "./types";
-import css from "./styles.module.css";
 import { Heading } from "../heading";
-
-const MAP_BACKGROUND_COLOR = {
-  default: css.default,
-  dark: css.dark,
-  light: css.light,
-};
-
-const MAP_TYPE = {
-  wrapper: css.wrapper,
-  children: css.children,
-};
+import { MAP_BACKGROUND_COLOR, MAP_TYPE } from "./style-helpers";
 
 const Label = ({
   children,
