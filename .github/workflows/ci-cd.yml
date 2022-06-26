@@ -41,7 +41,7 @@ jobs:
         appname: ['develop-ci-cd-gh'] ## code deploy application mae
         deploy-group: ['develop'] ## code deploy group
         s3-bucket: ['deployments-gh-react-ci-cd'] ## s3 bucket name
-        s3-filename: ['develop-aws-codedeploy-${{ github.sha }}']
+        s3-filename: ['develop-ci-cd-gh-${{ github.sha }}']
 
     needs: buildAndTest
     steps:
