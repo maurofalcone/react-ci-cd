@@ -5,8 +5,8 @@ files:
     destination: /home/ubuntu/aws-codedeploy
 permissions:
   - object: /home/ubuntu
-    owner: ubuntu
-    group: ubuntu
+    owner: ec2-user
+    # group: ubuntu
     type:
       - directory
       - file
